@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Fetch</title>
+  </head>
+  <body>
+    <h3 th:text="${pass}"></h3>
+    <table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Mobile</th>
+			<th>Dob</th>
+			<th>Maths</th>
+			<th>Science</th>
+			<th>English</th>
+			<th>Percentage</th>
+			<th>Result</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+        <tr th:each="student:${list}">
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.mobile}"></td>
+            <td th:text="${student.dob}"></td>
+            <td th:text="${student.maths}"></td>
+            <td th:text="${student.science}"></td>
+            <td th:text="${student.english}"></td>
+            <td th:text="${student.percentage}"></td>
+            <td th:text="${student.Result}"></td>
+            <td><a th:href="'edit?id='+${student.id}"><button>Edit</button></a></td>
+            <td><a th:href="'delete?id='+${student.id}"><button>Delete</button></a></td>
+        </tr>
+    </body>
+</html>
